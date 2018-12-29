@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        hexo博客之域名绑定 - undefined
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -111,97 +115,41 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-29</div>
-        <div class="post-info">
-            <a href="/2018/12/29/hexo博客之域名绑定/">
-                <h3>
-                    hexo博客之域名绑定
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-27</div>
-        <div class="post-info">
-            <a href="/2018/12/27/bash基础操作（转）/">
-                <h3>
-                    bash基础操作
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#bash" title="bash">bash</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-26</div>
-        <div class="post-info">
-            <a href="/2018/12/26/python之多线程模块threading/">
-                <h3>
-                    python之多线程模块threading
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#python" title="python">python</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#threading" title="threading">threading</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-25</div>
-        <div class="post-info">
-            <a href="/2018/12/25/github上部署hexo博客/">
-                <h3>
-                    github上部署hexo博客
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        hexo博客之域名绑定
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-29 23:57:35</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <p>买了域名实名认证之后，添加三条解析记录。<br>A    @    默认     192.30.252.154<br>A    @    默认     192.30.252.153<br>CNAME    www    默认     wupyweb.github.io<br><img src="https://i.loli.net/2018/12/29/5c279916269c6.png" alt="域名"><br>之后在根目录的source文件夹下新建CNAME文件，不带后缀，文件里的内容为自己的域名。<br>ok，重新部署一遍，你就发现能访问自己的域名了。</p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -240,7 +188,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
