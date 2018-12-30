@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        git提交忽略文件或文件夹 - undefined
         
     </title>
 
@@ -53,7 +53,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li class="active">
+            <li>
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>主页</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -111,117 +115,46 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-31</div>
-        <div class="post-info">
-            <a href="/2018/12/31/git提交忽略文件或文件夹/">
-                <h3>
-                    git提交忽略文件或文件夹
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#git" title="git">git</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-29</div>
-        <div class="post-info">
-            <a href="/2018/12/29/hexo博客之域名绑定/">
-                <h3>
-                    hexo博客之域名绑定
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-27</div>
-        <div class="post-info">
-            <a href="/2018/12/27/bash基础操作（转）/">
-                <h3>
-                    bash基础操作
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#bash" title="bash">bash</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-26</div>
-        <div class="post-info">
-            <a href="/2018/12/26/python之多线程模块threading/">
-                <h3>
-                    python之多线程模块threading
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#python" title="python">python</a>
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#threading" title="threading">threading</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2018-12-25</div>
-        <div class="post-info">
-            <a href="/2018/12/25/github上部署hexo博客/">
-                <h3>
-                    github上部署hexo博客
-                </h3>
-            </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-</div>
-<ul class="pager">
-    
-    
-</ul>
 
+
+<div class="post-container">
+    <div class="post-title">
+        git提交忽略文件或文件夹
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-12-31 00:10:33</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#git" title="git">git</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <p>如若我们不想把某些文件或文件夹添加到git仓库，我们需要在项目文件夹中新建一个<code>.gitignore</code>文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch .gitignore</span><br></pre></td></tr></table></figure></p>
+<p>然后在文件中添加你要忽略的文件，比如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/.idea/</span><br><span class="line">*.db</span><br><span class="line">.gitignore</span><br></pre></td></tr></table></figure></p>
+<p>之后，我们再使用<code>git add .</code>命令时，git将不会添加我们在<code>.gitignore</code>中配置的文件。</p>
+<p><hr><br>对于那些已经<code>commit</code>到缓存的文件，使用<code>git rm</code>命令移除。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached ./.idea/</span><br><span class="line">git rm --cached db.sqlite3</span><br></pre></td></tr></table></figure></p>
+<p>ok，现在我们来提交一次<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;移除文件&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<p><code>push</code>之后，我们发现github上我们的仓库里已经没有上面删除的文件了。</p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
     </div>
 </div>
 
@@ -260,7 +193,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
