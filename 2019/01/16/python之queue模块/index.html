@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        python之queue模块 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> Now is better than never. </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg">
+        </div>
+        <div class="name">
+            <i>wufujie</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li>
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li>
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li>
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li>
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Queue提供的方法："><span class="toc-text">Queue提供的方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-empty"><span class="toc-text">Queue.empty()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-put-item-block-True-timeout-None"><span class="toc-text">Queue.put(item, block=True, timeout=None)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-put-nowait-item"><span class="toc-text">Queue.put_nowait(item)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-get-block-True-timeout-None"><span class="toc-text">Queue.get(block=True, timeout=None)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-get-nowait"><span class="toc-text">Queue.get_nowait()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-task-done"><span class="toc-text">Queue.task_done()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Queue-join"><span class="toc-text">Queue.join()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生产者与消费者"><span class="toc-text">生产者与消费者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input">
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> Now is better than never. </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        python之queue模块
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-01-16 22:25:44</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#queue" title="queue">queue</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="Queue提供的方法："><a href="#Queue提供的方法：" class="headerlink" title="Queue提供的方法："></a>Queue提供的方法：</h3><h4 id="Queue-empty"><a href="#Queue-empty" class="headerlink" title="Queue.empty()"></a><code>Queue.empty()</code></h4><p>如果队列为空，返回True，否则返回False。如果empty()返回True，它不保证后续调用put()不会阻塞。类似的，如果empty()返回False也不能保证接下来的get()调用不会被阻塞。</p>
+<h4 id="Queue-put-item-block-True-timeout-None"><a href="#Queue-put-item-block-True-timeout-None" class="headerlink" title="Queue.put(item, block=True, timeout=None)"></a><code>Queue.put(item, block=True, timeout=None)</code></h4><p>将item放入队列中。如果可选的参数block为True且timeout为None（默认的情况，阻塞调用，无超时），如有必要（比如队列满），阻塞调用线程，直到有空闲槽可用。如果超时是正数，则它最多阻塞超时秒，如果在该时间内没有空闲插槽，则引发Full异常。如果block为False，如果有空闲槽可用将数据放入队列，否则立即抛出Full异常（非阻塞调用，timeout被忽略）。</p>
+<h4 id="Queue-put-nowait-item"><a href="#Queue-put-nowait-item" class="headerlink" title="Queue.put_nowait(item)"></a><code>Queue.put_nowait(item)</code></h4><p>等同于put(item, block=False)（非阻塞调用）。</p>
+<h4 id="Queue-get-block-True-timeout-None"><a href="#Queue-get-block-True-timeout-None" class="headerlink" title="Queue.get(block=True, timeout=None)"></a><code>Queue.get(block=True, timeout=None)</code></h4><p>从队列中移除并返回一个数据。如果可选的参数block为True且timeout为None（默认的情况，阻塞调用，无超时），阻塞调用进程直到有数据可用。如果超时是正数，则它最多阻塞超时秒，如果在该时间内没有可用的项，则引发Empty异常。如果block为False，如果有数据可用返回数据，否则立即抛出Empty异常（非阻塞调用，timeout被忽略）。</p>
+<h4 id="Queue-get-nowait"><a href="#Queue-get-nowait" class="headerlink" title="Queue.get_nowait()"></a><code>Queue.get_nowait()</code></h4><p>等同于get(block=False)（非阻塞调用）。</p>
+<h4 id="Queue-task-done"><a href="#Queue-task-done" class="headerlink" title="Queue.task_done()"></a><code>Queue.task_done()</code></h4><p>意味着之前入队的一个任务已经完成。由队列的消费者线程调用。每一个get()调用得到一个任务，接下来的task_done()调用告诉队列该任务已经处理完毕。</p>
+<p>If a join() is currently blocking, it will resume when all items have been processed (meaning that a task_done() call was received for every item that had been put() into the queue).</p>
+<p>如果该方法被调用的次数多于被放入队列中的任务的个数，ValueError异常会被抛出。</p>
+<h4 id="Queue-join"><a href="#Queue-join" class="headerlink" title="Queue.join()"></a><code>Queue.join()</code></h4><p>阻塞调用线程，直到队列中的所有任务被处理掉.</p>
+<p>只要有数据被加入队列，未完成的任务数就会增加。当消费者线程调用task_done()以指示该项目已检索并且其上的所有工作都已完成时，计数将减少。当未完成的任务数降到0，join()解除阻塞。</p>
+<h3 id="生产者与消费者"><a href="#生产者与消费者" class="headerlink" title="生产者与消费者"></a>生产者与消费者</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">import queue</span><br><span class="line">import time</span><br><span class="line">import random</span><br><span class="line">from threading import Thread</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Producer(Thread):</span><br><span class="line">    def __init__(self, queue):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.queue = queue</span><br><span class="line"></span><br><span class="line">    def run(self):</span><br><span class="line">        producers = [&apos;A&apos;, &apos;B&apos;]</span><br><span class="line">        while True:</span><br><span class="line">            for name in producers:</span><br><span class="line">                i = random.randint(10000, 30000)</span><br><span class="line">                print(&apos;%s produced %d&apos; % (name, i))</span><br><span class="line">                self.queue.put(i)</span><br><span class="line">                time.sleep(3)</span><br><span class="line">            time.sleep(1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Customer(Thread):</span><br><span class="line">    def __init__(self, queue):</span><br><span class="line">        super().__init__()</span><br><span class="line">        self.queue = queue</span><br><span class="line"></span><br><span class="line">    def run(self):</span><br><span class="line">        customers = [&apos;Customer1&apos;, &apos;Customer2&apos;, &apos;Customer3&apos;, &apos;Customer4&apos;]</span><br><span class="line">        while True:</span><br><span class="line">            for name in customers:</span><br><span class="line">                r = self.queue.get()</span><br><span class="line">                print(&apos;%d is customed by %s&apos; % (r, name))</span><br><span class="line">                queue.task_done()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    queue = queue.Queue()</span><br><span class="line">    p_t = []</span><br><span class="line">    c_t = []</span><br><span class="line">    # 启用两个生产者线程</span><br><span class="line">    for i in range(2):</span><br><span class="line">        producer = Producer(queue)</span><br><span class="line">        p_t.append(producer)</span><br><span class="line">        producer.start()</span><br><span class="line"></span><br><span class="line">    # 启用三个消费者线程</span><br><span class="line">    for i in range(3):</span><br><span class="line">        customer = Customer(queue)</span><br><span class="line">        c_t.append(customer)</span><br><span class="line">        customer.start()</span><br><span class="line"></span><br><span class="line">    # 消费者与生产者类都用了死循环，后面这些代码是运行不到的</span><br><span class="line">    queue.join()</span><br><span class="line">    for p in p_t:</span><br><span class="line">        p.join()</span><br><span class="line">    for c in c_t:</span><br><span class="line">        c.join()</span><br><span class="line">    print(&apos;FINISH&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://www.cnblogs.com/God-Li/p/7745408.html" target="_blank" rel="noopener">queue模块使用</a></p>
+
+        
+        <br>
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
