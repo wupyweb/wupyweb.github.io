@@ -1,145 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keyword" content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+  <meta charset="utf-8">
+  
 
-    <title>
-        
-        python之多线程模块threading - undefined
-        
-    </title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <script></script>
+  
+  <title>python之多线程模块threading | wufujie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="1，Thread Objectsclass threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)一些参数：  target：代表调用的函数 args：函数的参数元组 kwargs：函数的参数字典start()启动一个线程run()线程的活动，run()方法调用target传来">
+<meta name="keywords" content="python,threading">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python之多线程模块threading">
+<meta property="og:url" content="http://yoursite.com/2018/12/26/python之多线程模块threading/index.html">
+<meta property="og:site_name" content="wufujie">
+<meta property="og:description" content="1，Thread Objectsclass threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)一些参数：  target：代表调用的函数 args：函数的参数元组 kwargs：函数的参数字典start()启动一个线程run()线程的活动，run()方法调用target传来">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2018-12-26T07:08:57.293Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python之多线程模块threading">
+<meta name="twitter:description" content="1，Thread Objectsclass threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)一些参数：  target：代表调用的函数 args：函数的参数元组 kwargs：函数的参数字典start()启动一个线程run()线程的活动，run()方法调用target传来">
+  
+    <link rel="alternate" href="/atom.xml" title="wufujie" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/default-avatar.webp">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
 </head>
-
+</html>
 <body>
-
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
-
-<div class="index-about">
-    <i> Code for fun. </i>
-</div>
-
-<div class="index-container">
+  <div id="fullpage" class="mobile-nav-right">
     
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar">
-            <img src="/img/avatar.jpg">
-        </div>
-        <div class="name">
-            <i>wufujie</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li>
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li>
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li>
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li>
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
+      <div id="wrapper" title="图片来自网络">
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1，Thread-Objects"><span class="toc-text">1，Thread Objects</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#class-threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None"><span class="toc-text">class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#start"><span class="toc-text">start()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#run"><span class="toc-text">run()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#join"><span class="toc-text">join()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2，Lock-Objects"><span class="toc-text">2，Lock Objects</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#acquire"><span class="toc-text">acquire()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#release"><span class="toc-text">release()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3，RLock-Objects"><span class="toc-text">3，RLock Objects</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4，Condition-Objects"><span class="toc-text">4，Condition Objects</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#wait"><span class="toc-text">wait()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#notify"><span class="toc-text">notify()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#捉迷藏游戏"><span class="toc-text">捉迷藏游戏</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5，Event-Objects"><span class="toc-text">5，Event Objects</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#is-set"><span class="toc-text">is_set()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set"><span class="toc-text">set()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clear"><span class="toc-text">clear()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#wait-1"><span class="toc-text">wait()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#生产者消费者"><span class="toc-text">生产者消费者</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
-</div>
     
-</div>
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/archives" title="">归档</a>
+      
+        <a class="nav-item" href="/music" title="">听音乐</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-python之多线程模块threading" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      python之多线程模块threading
+    </h1>
+  
 
-
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input">
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-        <div class="index-about-mobile">
-            <i> Code for fun. </i>
-        </div>
-    </div>
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2018/12/26/python之多线程模块threading/" class="article-date">
+  <time datetime="2018-12-26T06:40:20.000Z" itemprop="datePublished">2018-12-26</time>
+</a>
     
-    <div class="index-middle">
-        <!-- Main Content -->
-        
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/threading/">threading</a></li></ul>
 
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
 
-<div class="post-container">
-    <div class="post-title">
-        python之多线程模块threading
-    </div>
-
-    <div class="post-meta">
-        <span class="attr">发布于：<span>2018-12-26 14:40:20</span></span>
-        
-        <span class="attr">标签：/
-        
-        <a class="tag" href="/tags/#python" title="python">python</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#threading" title="threading">threading</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
-</span>
-
-    </div>
-    <div class="post-content no-indent">
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
         <h3 id="1，Thread-Objects"><a href="#1，Thread-Objects" class="headerlink" title="1，Thread Objects"></a>1，Thread Objects</h3><h4 id="class-threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None"><a href="#class-threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None" class="headerlink" title="class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)"></a>class threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)</h4><p>一些参数：</p>
 <ul>
 <li>target：代表调用的函数</li>
@@ -149,77 +96,190 @@
 <h3 id="2，Lock-Objects"><a href="#2，Lock-Objects" class="headerlink" title="2，Lock Objects"></a>2，Lock Objects</h3><h4 id="acquire"><a href="#acquire" class="headerlink" title="acquire()"></a>acquire()</h4><p>锁的获取</p>
 <h4 id="release"><a href="#release" class="headerlink" title="release()"></a>release()</h4><p>锁的释放</p>
 <h3 id="3，RLock-Objects"><a href="#3，RLock-Objects" class="headerlink" title="3，RLock Objects"></a>3，RLock Objects</h3><p> RLock允许在同一线程中被多次acquire。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">lock = threading.Lock()</span><br><span class="line">#Lock对象</span><br><span class="line">lock.acquire()</span><br><span class="line">lock.acquire()</span><br><span class="line">#产生了死琐。</span><br><span class="line">lock.release()</span><br><span class="line">lock.release()</span><br><span class="line"></span><br><span class="line">import threading</span><br><span class="line">rLock = threading.RLock()</span><br><span class="line">#RLock对象</span><br><span class="line">rLock.acquire()</span><br><span class="line">rLock.acquire()</span><br><span class="line">#在同一线程内，程序不会堵塞。</span><br><span class="line">rLock.release()</span><br><span class="line">rLock.release()</span><br></pre></td></tr></table></figure>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import threading</span><br><span class="line">lock = threading.Lock()</span><br><span class="line">#Lock对象</span><br><span class="line">lock.acquire()</span><br><span class="line">lock.acquire()</span><br><span class="line">#产生了死琐。</span><br><span class="line">lock.release()</span><br><span class="line">lock.release()</span><br><span class="line"></span><br><span class="line">import threading</span><br><span class="line">rLock = threading.RLock()</span><br><span class="line">#RLock对象</span><br><span class="line">rLock.acquire()</span><br><span class="line">rLock.acquire()</span><br><span class="line">#在同一线程内，程序不会堵塞。</span><br><span class="line">rLock.release()</span><br><span class="line">rLock.release()</span><br></pre></td></tr></table></figure></div>
 <h3 id="4，Condition-Objects"><a href="#4，Condition-Objects" class="headerlink" title="4，Condition Objects"></a>4，Condition Objects</h3><p>可以把Condiftion理解为一把高级的琐，它提供了比Lock, RLock更高级的功能，允许我们能够控制复杂的线程同步问题。threadiong.Condition在内部维护一个琐对象（默认是RLock），可以在创建Condigtion对象的时候把琐对象作为参数传入。Condition也提供了acquire, release方法，其含义与琐的acquire, release方法一致，其实它只是简单的调用内部琐对象的对应的方法而已。Condition还提供wait方法、notify方法、notifyAll方法(特别要注意：这些方法只有在占用琐(acquire)之后才能调用，否则将会报RuntimeError异常。</p>
 <h4 id="wait"><a href="#wait" class="headerlink" title="wait()"></a>wait()</h4><p>线程挂起，直到收到一个notify通知或者超时（可选的，浮点数，单位是秒s）才会被唤醒继续运行。wait()必须在已获得Lock前提下才能调用，否则会触发RuntimeError。调用wait()会释放Lock，直至该线程被Notify()、NotifyAll()或者超时线程又重新获得Lock.</p>
 <h4 id="notify"><a href="#notify" class="headerlink" title="notify()"></a>notify()</h4><p>通知其他线程，那些挂起的线程接到这个通知之后会开始运行，默认是通知一个正等待该condition的线程,最多则唤醒n个等待的线程。notify()必须在已获得Lock前提下才能调用，否则会触发RuntimeError。notify()不会主动释放Lock。</p>
 <h4 id="捉迷藏游戏"><a href="#捉迷藏游戏" class="headerlink" title="捉迷藏游戏"></a>捉迷藏游戏</h4><p> 现在写个捉迷藏的游戏来具体介绍threading.Condition的基本使用。假设这个游戏由两个人来玩，一个藏(Hider)，一个找(Seeker)。游戏的规则如下：1. 游戏开始之后，Seeker先把自己眼睛蒙上，蒙上眼睛后，就通知Hider；2. Hider接收通知后开始找地方将自己藏起来，藏好之后，再通知Seeker可以找了； 3. Seeker接收到通知之后，就开始找Hider。Hider和Seeker都是独立的个体，在程序中用两个独立的线程来表示，在游戏过程中，两者之间的行为有一定的时序关系，我们通过Condition来控制这种时序关系。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">#coding: utf-8</span><br><span class="line"></span><br><span class="line">import threading, time</span><br><span class="line"></span><br><span class="line">def Seeker(cond, name):</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    cond.acquire()</span><br><span class="line">    print(&apos;%s :我已经把眼睛蒙上了！&apos;% name)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.wait()</span><br><span class="line">    for i in range(3):</span><br><span class="line">        print(&apos;%s is finding!!!&apos;% name)</span><br><span class="line">        time.sleep(2)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.release()</span><br><span class="line">    print(&apos;%s :我赢了！&apos;% name)</span><br><span class="line"></span><br><span class="line">def Hider(cond, name):</span><br><span class="line">    cond.acquire()</span><br><span class="line">    cond.wait()</span><br><span class="line">    for i in range(2):</span><br><span class="line">        print(&apos;%s is hiding!!!&apos;% name)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">    print(&apos;%s :我已经藏好了，你快来找我吧！&apos;% name)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.wait()</span><br><span class="line">    cond.release()</span><br><span class="line">    print(&apos;%s :被你找到了，唉~^~!&apos;% name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    cond = threading.Condition()</span><br><span class="line">    seeker = threading.Thread(target=Seeker, args=(cond, &apos;seeker&apos;))</span><br><span class="line">    hider = threading.Thread(target=Hider, args=(cond, &apos;hider&apos;))</span><br><span class="line">    seeker.start()</span><br><span class="line">    hider.start()</span><br><span class="line">    seeker.join()</span><br><span class="line">    hider.join()</span><br></pre></td></tr></table></figure>
+<div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">#coding: utf-8</span><br><span class="line"></span><br><span class="line">import threading, time</span><br><span class="line"></span><br><span class="line">def Seeker(cond, name):</span><br><span class="line">    time.sleep(2)</span><br><span class="line">    cond.acquire()</span><br><span class="line">    print(&apos;%s :我已经把眼睛蒙上了！&apos;% name)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.wait()</span><br><span class="line">    for i in range(3):</span><br><span class="line">        print(&apos;%s is finding!!!&apos;% name)</span><br><span class="line">        time.sleep(2)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.release()</span><br><span class="line">    print(&apos;%s :我赢了！&apos;% name)</span><br><span class="line"></span><br><span class="line">def Hider(cond, name):</span><br><span class="line">    cond.acquire()</span><br><span class="line">    cond.wait()</span><br><span class="line">    for i in range(2):</span><br><span class="line">        print(&apos;%s is hiding!!!&apos;% name)</span><br><span class="line">        time.sleep(3)</span><br><span class="line">    print(&apos;%s :我已经藏好了，你快来找我吧！&apos;% name)</span><br><span class="line">    cond.notify()</span><br><span class="line">    cond.wait()</span><br><span class="line">    cond.release()</span><br><span class="line">    print(&apos;%s :被你找到了，唉~^~!&apos;% name)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    cond = threading.Condition()</span><br><span class="line">    seeker = threading.Thread(target=Seeker, args=(cond, &apos;seeker&apos;))</span><br><span class="line">    hider = threading.Thread(target=Hider, args=(cond, &apos;hider&apos;))</span><br><span class="line">    seeker.start()</span><br><span class="line">    hider.start()</span><br><span class="line">    seeker.join()</span><br><span class="line">    hider.join()</span><br></pre></td></tr></table></figure></div>
 <h3 id="5，Event-Objects"><a href="#5，Event-Objects" class="headerlink" title="5，Event Objects"></a>5，Event Objects</h3><h4 id="is-set"><a href="#is-set" class="headerlink" title="is_set()"></a>is_set()</h4><p>当且仅当内部表示为True时返回True。如果set()没有设定，则说明为为False</p>
 <h4 id="set"><a href="#set" class="headerlink" title="set()"></a>set()</h4><p>设定内部标志为True。所有线程等到它为真时，都会被唤醒。调用了wait()的线程，一旦检测到内部标志位True时，那么都不会继续阻塞了</p>
 <h4 id="clear"><a href="#clear" class="headerlink" title="clear()"></a>clear()</h4><p>设定内部标识为False。随后，调用wait()的线程都会被阻塞，直到调用set()将内部标志设置为True</p>
 <h4 id="wait-1"><a href="#wait-1" class="headerlink" title="wait()"></a>wait()</h4><p>阻塞线程，知道内部标志设置为True。如果内部标志在入口时为真，则立即返回。 否则，阻塞将持续到另一个线程调用set()将标志设置为true，或直到可选超时发生才会结束。此方法在退出时返回内部标志，因此除非给出超时且操作超时，否则它将始终返回True</p>
-<h4 id="生产者消费者"><a href="#生产者消费者" class="headerlink" title="生产者消费者"></a>生产者消费者</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/pyhton</span><br><span class="line">#coding: utf-8</span><br><span class="line"></span><br><span class="line">import threading</span><br><span class="line">import time</span><br><span class="line">from random import randint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def customers(event, lists):</span><br><span class="line">    t = threading.current_thread()</span><br><span class="line">    while 1:</span><br><span class="line">        event.wait()</span><br><span class="line">        if event.is_set():</span><br><span class="line">            try:</span><br><span class="line">                i = lists.pop()</span><br><span class="line">                print(&apos;&#123;0&#125; is customed by &#123;1&#125;&apos;.format(i, t.name))</span><br><span class="line">                event.clear()   #阻塞所有线程</span><br><span class="line">            except IndexError:</span><br><span class="line">                pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def producer(event, lists):</span><br><span class="line">    t = threading.current_thread()</span><br><span class="line">    while 1:</span><br><span class="line">        i = randint(1, 30)</span><br><span class="line">        lists.append(i)</span><br><span class="line">        print(&apos;&#123;0&#125; is produced by &#123;1&#125;&apos;.format(i, t.name))</span><br><span class="line">        event.set()     #唤醒其他线程</span><br><span class="line">        time.sleep(1)    #没有实际意义，为了结果输出时看的清楚点。</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    threads = []</span><br><span class="line">    lists = []</span><br><span class="line">    event = threading.Event()</span><br><span class="line"></span><br><span class="line">    for name in (&apos;customer1&apos;, &apos;customer2&apos;):</span><br><span class="line">        thread = threading.Thread(target=customers, args=(event, lists))</span><br><span class="line">        threads.append(thread)</span><br><span class="line">        thread.start()</span><br><span class="line"></span><br><span class="line">    produce_thread = threading.Thread(target=producer, args=(event, lists))</span><br><span class="line">    threads.append(produce_thread)</span><br><span class="line">    produce_thread.start()</span><br><span class="line"></span><br><span class="line">    for thread in threads:</span><br><span class="line">        thread.join()</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h4 id="生产者消费者"><a href="#生产者消费者" class="headerlink" title="生产者消费者"></a>生产者消费者</h4><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/pyhton</span><br><span class="line">#coding: utf-8</span><br><span class="line"></span><br><span class="line">import threading</span><br><span class="line">import time</span><br><span class="line">from random import randint</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def customers(event, lists):</span><br><span class="line">    t = threading.current_thread()</span><br><span class="line">    while 1:</span><br><span class="line">        event.wait()</span><br><span class="line">        if event.is_set():</span><br><span class="line">            try:</span><br><span class="line">                i = lists.pop()</span><br><span class="line">                print(&apos;&#123;0&#125; is customed by &#123;1&#125;&apos;.format(i, t.name))</span><br><span class="line">                event.clear()   #阻塞所有线程</span><br><span class="line">            except IndexError:</span><br><span class="line">                pass</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def producer(event, lists):</span><br><span class="line">    t = threading.current_thread()</span><br><span class="line">    while 1:</span><br><span class="line">        i = randint(1, 30)</span><br><span class="line">        lists.append(i)</span><br><span class="line">        print(&apos;&#123;0&#125; is produced by &#123;1&#125;&apos;.format(i, t.name))</span><br><span class="line">        event.set()     #唤醒其他线程</span><br><span class="line">        time.sleep(1)    #没有实际意义，为了结果输出时看的清楚点。</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    threads = []</span><br><span class="line">    lists = []</span><br><span class="line">    event = threading.Event()</span><br><span class="line"></span><br><span class="line">    for name in (&apos;customer1&apos;, &apos;customer2&apos;):</span><br><span class="line">        thread = threading.Thread(target=customers, args=(event, lists))</span><br><span class="line">        threads.append(thread)</span><br><span class="line">        thread.start()</span><br><span class="line"></span><br><span class="line">    produce_thread = threading.Thread(target=producer, args=(event, lists))</span><br><span class="line">    threads.append(produce_thread)</span><br><span class="line">    produce_thread.start()</span><br><span class="line"></span><br><span class="line">    for thread in threads:</span><br><span class="line">        thread.join()</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure></div>
 <h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://www.cnblogs.com/chengd/articles/7770898.html" target="_blank" rel="noopener">Python3入门之线程threading常用方法</a></p>
 <p><a href="https://www.jianshu.com/p/653cfc4bda55" target="_blank" rel="noopener">threading模块</a></p>
 <p><a href="https://docs.python.org/3.6/library/threading.html" target="_blank" rel="noopener">官方文档</a></p>
 
-        
-        <br>
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
-        </div>
-
+      
     </div>
-</div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-    </ul>
     
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2018/12/27/bash基础操作（转）/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            bash基础操作
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2018/12/25/github上部署hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">github上部署hexo博客</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
 
-
-
-
-</body>
-
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = true
+var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
 </script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="/images/avatar.jpg" title="图片来自网络">
+    <h3 class="avatar-name">
+      
+        wufujie
+      
+    </h3>
+    <p class="avatar-slogan">
+      code for fun.
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/logging/">logging</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/queue/">queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/threading/">threading</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/yum/">yum</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/logging/" style="font-size: 10px;">logging</a> <a href="/tags/python/" style="font-size: 20px;">python</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/yum/" style="font-size: 10px;">yum</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">December 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/01/21/HTML入门/">HTML入门</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/16/python之queue模块/">python之queue模块</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/15/python之logging模块/">python之logging模块</a>
+          </li>
+        
+          <li>
+            <a href="/2019/01/02/centos7-yum基本使用及更换清华源/">centos7 yum基本使用及更换清华源</a>
+          </li>
+        
+          <li>
+            <a href="/2018/12/31/git提交忽略文件或文件夹/">git提交忽略文件或文件夹</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 wufujie &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
 
 
 
-
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/music" class="mobile-nav-link">听音乐</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
 </html>
